@@ -477,15 +477,33 @@ section { padding: 6rem 2rem; position: relative; }
   display: flex;
   flex-direction: column;
 }
+.menu-card-img-wrap {
+  overflow: hidden;
+  line-height: 0;
+  border-radius: 6px;
+  border: 1.5px solid var(--gold-dark);
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.4), 0 0 0 1px rgba(201,167,76,0.08);
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+.menu-card:hover .menu-card-img-wrap {
+  border-color: var(--gold);
+  box-shadow: 0 4px 20px rgba(201,167,76,0.15), 0 0 0 1px rgba(201,167,76,0.2);
+}
 .menu-card-img {
   width: 100%;
   height: 180px;
   object-fit: cover;
   display: block;
   opacity: 0;
-  transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  filter: brightness(0.93) saturate(1.1);
 }
 .menu-card-img.loaded { opacity: 1; }
+.menu-card:hover .menu-card-img {
+  transform: scale(1.08);
+  filter: brightness(1) saturate(1.2);
+}
 .menu-card-body {
   padding: 1.2rem 1.5rem;
 }
@@ -507,14 +525,6 @@ section { padding: 6rem 2rem; position: relative; }
   box-shadow: 0 8px 30px rgba(201,167,76,0.08);
 }
 .menu-card:hover::before { opacity: 1; }
-.menu-card:hover .menu-card-img { transform: scale(1.03); }
-.menu-card-img-wrap {
-  overflow: hidden;
-  line-height: 0;
-}
-.menu-card-img {
-  transition: opacity 0.5s ease, transform 0.6s ease;
-}
 .menu-card-header {
   display: flex;
   justify-content: space-between;
@@ -549,6 +559,8 @@ section { padding: 6rem 2rem; position: relative; }
   min-width: 20px;
   align-self: center;
 }
+
+
 
 @media (max-width: 768px) {
   .menu-panel { grid-template-columns: 1fr; }
@@ -856,32 +868,28 @@ footer {
     <div class="menu-panels" id="menuPanels">
       <!-- SOUPS -->
       <div class="menu-panel active" data-panel="soups">
-        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3562-3662-4831-b833-396338666563/IMG_5029.JPG" alt="Ramen Chicken" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">
-          <div class="menu-card-header">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3562-3662-4831-b833-396338666563/IMG_5029.JPG" alt="Ramen Chicken" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">          <div class="menu-card-header">
             <span class="menu-card-name">Ramen Chicken</span>
             <span class="menu-card-dots"></span>
             <span class="menu-card-price">€15</span>
           </div>
           <p class="menu-card-desc">A rich chicken broth infused with miso paste, coconut milk, mirin</p>
         </div></div>
-        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3435-6237-4631-b765-393230353338/IMG_4633.JPG" alt="Ramen Pork" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">
-          <div class="menu-card-header">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3435-6237-4631-b765-393230353338/IMG_4633.JPG" alt="Ramen Pork" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">          <div class="menu-card-header">
             <span class="menu-card-name">Ramen Pork</span>
             <span class="menu-card-dots"></span>
             <span class="menu-card-price">€16</span>
           </div>
           <p class="menu-card-desc">Ramen with pork, two slices of homemade pork belly</p>
         </div></div>
-        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild6136-6136-4034-b239-363764643034/IMG_4865.JPG" alt="Miso Soup Salmon" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">
-          <div class="menu-card-header">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild6136-6136-4034-b239-363764643034/IMG_4865.JPG" alt="Miso Soup Salmon" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">          <div class="menu-card-header">
             <span class="menu-card-name">Miso Soup Salmon</span>
             <span class="menu-card-dots"></span>
             <span class="menu-card-price">€10</span>
           </div>
           <p class="menu-card-desc">Creamy miso paste, tender tofu, delicate salmon</p>
         </div></div>
-        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild6330-3036-4333-b236-323763333737/IMG_4866.JPG" alt="Miso Chicken" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">
-          <div class="menu-card-header">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild6330-3036-4333-b236-323763333737/IMG_4866.JPG" alt="Miso Chicken" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">          <div class="menu-card-header">
             <span class="menu-card-name">Miso Chicken</span>
             <span class="menu-card-dots"></span>
             <span class="menu-card-price">€8</span>
@@ -892,104 +900,91 @@ footer {
 
       <!-- STARTERS -->
       <div class="menu-panel" data-panel="starters">
-        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild6365-6562-4631-b835-393136393565/IMG_4021.JPG" alt="Edamame" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">
-          <div class="menu-card-header">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild6365-6562-4631-b835-393136393565/IMG_4021.JPG" alt="Edamame" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">          <div class="menu-card-header">
             <span class="menu-card-name">Edamame</span>
             <span class="menu-card-dots"></span>
             <span class="menu-card-price">€5</span>
           </div>
           <p class="menu-card-desc">Young soybeans steamed with sea salt</p>
         </div></div>
-        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild6331-3134-4765-b530-643438383639/IMG_4028_2.JPG" alt="Edamame Spicy" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">
-          <div class="menu-card-header">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild6331-3134-4765-b530-643438383639/IMG_4028_2.JPG" alt="Edamame Spicy" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">          <div class="menu-card-header">
             <span class="menu-card-name">Edamame Spicy</span>
             <span class="menu-card-dots"></span>
             <span class="menu-card-price">€5.50</span>
           </div>
           <p class="menu-card-desc">Soybeans in chili paste with sea salt</p>
         </div></div>
-        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3463-6163-4333-a361-386165636561/IMG_4173_2.JPG" alt="Tartare Tuna" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">
-          <div class="menu-card-header">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3463-6163-4333-a361-386165636561/IMG_4173_2.JPG" alt="Tartare Tuna" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">          <div class="menu-card-header">
             <span class="menu-card-name">Tartare Tuna</span>
             <span class="menu-card-dots"></span>
             <span class="menu-card-price">€14</span>
           </div>
           <p class="menu-card-desc">Fresh tuna with Ponzu, Sriracha, crispy rice chips</p>
         </div></div>
-        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3739-6564-4265-a664-383766373830/IMG_4581_2.JPG" alt="Ebi Tempura" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">
-          <div class="menu-card-header">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3739-6564-4265-a664-383766373830/IMG_4581_2.JPG" alt="Ebi Tempura" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">          <div class="menu-card-header">
             <span class="menu-card-name">Ebi Tempura</span>
             <span class="menu-card-dots"></span>
             <span class="menu-card-price">€15</span>
           </div>
           <p class="menu-card-desc">Crispy shrimps in tempura batter</p>
         </div></div>
-        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild6462-6663-4030-a163-636235646563/IMG_4283_2.JPG" alt="Tataki Tuna" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">
-          <div class="menu-card-header">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild6462-6663-4030-a163-636235646563/IMG_4283_2.JPG" alt="Tataki Tuna" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">          <div class="menu-card-header">
             <span class="menu-card-name">Tataki Tuna</span>
             <span class="menu-card-dots"></span>
             <span class="menu-card-price">€15</span>
           </div>
           <p class="menu-card-desc">Fresh tuna with Ponzu, green onions, sesame oil</p>
         </div></div>
-        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3634-3165-4033-a331-306437636463/IMG_4945.JPG" alt="Tataki Salmon" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">
-          <div class="menu-card-header">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3634-3165-4033-a331-306437636463/IMG_4945.JPG" alt="Tataki Salmon" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">          <div class="menu-card-header">
             <span class="menu-card-name">Tataki Salmon</span>
             <span class="menu-card-dots"></span>
             <span class="menu-card-price">€16</span>
           </div>
           <p class="menu-card-desc">Seared salmon with Ponzu, wasabi mayo</p>
         </div></div>
-        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3762-6435-4635-b364-313135303736/IMG_3154.JPG" alt="Bao-Buns Shrimps" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">
-          <div class="menu-card-header">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3762-6435-4635-b364-313135303736/IMG_3154.JPG" alt="Bao-Buns Shrimps" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">          <div class="menu-card-header">
             <span class="menu-card-name">Bao-Buns Shrimps</span>
             <span class="menu-card-dots"></span>
             <span class="menu-card-price">€14</span>
           </div>
           <p class="menu-card-desc">Steamed bao buns with crispy shrimps</p>
         </div></div>
-        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3462-3232-4231-b461-383237303434/IMG_4142_2.JPG" alt="Panko Roll" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">
-          <div class="menu-card-header">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3462-3232-4231-b461-383237303434/IMG_4142_2.JPG" alt="Panko Roll" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">          <div class="menu-card-header">
             <span class="menu-card-name">Panko Roll</span>
             <span class="menu-card-dots"></span>
             <span class="menu-card-price">€12</span>
           </div>
           <p class="menu-card-desc">Chicken fillet in panko breadcrumbs</p>
         </div></div>
-        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3238-3036-4462-b631-663639336535/IMG_4210_2.JPG" alt="Gyoza Chicken" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">
-          <div class="menu-card-header">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3238-3036-4462-b631-663639336535/IMG_4210_2.JPG" alt="Gyoza Chicken" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">          <div class="menu-card-header">
             <span class="menu-card-name">Gyoza Chicken</span>
             <span class="menu-card-dots"></span>
             <span class="menu-card-price">€10</span>
           </div>
           <p class="menu-card-desc">Pan-fried chicken dumplings</p>
         </div></div>
-        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild6231-6662-4564-a362-336136313463/IMG_4869_2.JPG" alt="Gyoza Pork" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">
-          <div class="menu-card-header">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild6231-6662-4564-a362-336136313463/IMG_4869_2.JPG" alt="Gyoza Pork" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">          <div class="menu-card-header">
             <span class="menu-card-name">Gyoza Pork</span>
             <span class="menu-card-dots"></span>
             <span class="menu-card-price">€11</span>
           </div>
           <p class="menu-card-desc">Pan-fried pork dumplings</p>
         </div></div>
-        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3137-6231-4536-b266-336131373633/IMG_4995.JPG" alt="Bruschetta Burrata &amp; Cherry" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">
-          <div class="menu-card-header">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3137-6231-4536-b266-336131373633/IMG_4995.JPG" alt="Bruschetta Burrata &amp; Cherry" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">          <div class="menu-card-header">
             <span class="menu-card-name">Bruschetta Burrata &amp; Cherry</span>
             <span class="menu-card-dots"></span>
             <span class="menu-card-price">€8.50</span>
           </div>
           <p class="menu-card-desc">Creamy burrata with cherry tomatoes</p>
         </div></div>
-        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3861-6261-4735-b634-636432366535/IMG_4991.JPG" alt="Bruschetta Ricotta &amp; Salmon" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">
-          <div class="menu-card-header">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3861-6261-4735-b634-636432366535/IMG_4991.JPG" alt="Bruschetta Ricotta &amp; Salmon" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">          <div class="menu-card-header">
             <span class="menu-card-name">Bruschetta Ricotta &amp; Salmon</span>
             <span class="menu-card-dots"></span>
             <span class="menu-card-price">€9.50</span>
           </div>
           <p class="menu-card-desc">Ricotta with smoked salmon</p>
         </div></div>
-        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild6634-3532-4936-b266-373536363164/IMG_4852.JPG" alt="Spring Roll Duck" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">
-          <div class="menu-card-header">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild6634-3532-4936-b266-373536363164/IMG_4852.JPG" alt="Spring Roll Duck" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">          <div class="menu-card-header">
             <span class="menu-card-name">Spring Roll Duck</span>
             <span class="menu-card-dots"></span>
             <span class="menu-card-price">€12</span>
@@ -1000,72 +995,63 @@ footer {
 
       <!-- MAIN COURSES -->
       <div class="menu-panel" data-panel="mains">
-        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild6534-3464-4139-b962-326662346632/IMG_4552_2.JPG" alt="KFC — Korean Fried Chicken" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">
-          <div class="menu-card-header">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild6534-3464-4139-b962-326662346632/IMG_4552_2.JPG" alt="KFC — Korean Fried Chicken" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">          <div class="menu-card-header">
             <span class="menu-card-name">KFC — Korean Fried Chicken</span>
             <span class="menu-card-dots"></span>
             <span class="menu-card-price">€14</span>
           </div>
           <p class="menu-card-desc">Crispy chicken with katsu sauce</p>
         </div></div>
-        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3063-3663-4236-b832-383331626531/IMG_4821.JPG" alt="Creamy Miso Chicken" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">
-          <div class="menu-card-header">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3063-3663-4236-b832-383331626531/IMG_4821.JPG" alt="Creamy Miso Chicken" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">          <div class="menu-card-header">
             <span class="menu-card-name">Creamy Miso Chicken</span>
             <span class="menu-card-dots"></span>
             <span class="menu-card-price">€12</span>
           </div>
           <p class="menu-card-desc">Grilled chicken with mushroom sauce, rice</p>
         </div></div>
-        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3461-6564-4363-b133-663066643464/IMG_4833.JPG" alt="BBQ Turkey Steak" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">
-          <div class="menu-card-header">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3461-6564-4363-b133-663066643464/IMG_4833.JPG" alt="BBQ Turkey Steak" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">          <div class="menu-card-header">
             <span class="menu-card-name">BBQ Turkey Steak</span>
             <span class="menu-card-dots"></span>
             <span class="menu-card-price">€14</span>
           </div>
           <p class="menu-card-desc">Grilled turkey with teriyaki, vegetables</p>
         </div></div>
-        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3363-6434-4931-b130-663564363935/IMG_4968.JPG" alt="Asian Pork" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">
-          <div class="menu-card-header">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3363-6434-4931-b130-663564363935/IMG_4968.JPG" alt="Asian Pork" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">          <div class="menu-card-header">
             <span class="menu-card-name">Asian Pork</span>
             <span class="menu-card-dots"></span>
             <span class="menu-card-price">€16</span>
           </div>
           <p class="menu-card-desc">Pork shank in Ponzu, slow-baked</p>
         </div></div>
-        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3961-6437-4263-b166-363165316336/IMG_4721_2.JPG" alt="Green Curry" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">
-          <div class="menu-card-header">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3961-6437-4263-b166-363165316336/IMG_4721_2.JPG" alt="Green Curry" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">          <div class="menu-card-header">
             <span class="menu-card-name">Green Curry</span>
             <span class="menu-card-dots"></span>
             <span class="menu-card-price">€14</span>
           </div>
           <p class="menu-card-desc">Chicken in green curry, coconut milk, rice</p>
         </div></div>
-        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3838-3934-4530-b161-643663373130/1000000651.jpg" alt="Seafood Fried Rice" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">
-          <div class="menu-card-header">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3838-3934-4530-b161-643663373130/1000000651.jpg" alt="Seafood Fried Rice" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">          <div class="menu-card-header">
             <span class="menu-card-name">Seafood Fried Rice</span>
             <span class="menu-card-dots"></span>
             <span class="menu-card-price">€14</span>
           </div>
           <p class="menu-card-desc">Rice with shrimp, vegetables, teriyaki</p>
         </div></div>
-        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild6637-6136-4066-b662-626637643431/IMG_4979_2.jpg" alt="Beef Skewers" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">
-          <div class="menu-card-header">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild6637-6136-4066-b662-626637643431/IMG_4979_2.jpg" alt="Beef Skewers" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">          <div class="menu-card-header">
             <span class="menu-card-name">Beef Skewers</span>
             <span class="menu-card-dots"></span>
             <span class="menu-card-price">€18</span>
           </div>
           <p class="menu-card-desc">Black Angus with teriyaki, rice</p>
         </div></div>
-        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild6535-3837-4363-b866-616162373164/IMG_5008.JPG" alt="Gnocchi Shika" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">
-          <div class="menu-card-header">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild6535-3837-4363-b866-616162373164/IMG_5008.JPG" alt="Gnocchi Shika" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">          <div class="menu-card-header">
             <span class="menu-card-name">Gnocchi Shika</span>
             <span class="menu-card-dots"></span>
             <span class="menu-card-price">€15</span>
           </div>
           <p class="menu-card-desc">Potato gnocchi with turkey, hondashi cream</p>
         </div></div>
-        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3535-3337-4933-a161-373366396537/IMG_4034.JPG" alt="Katsu Chicken" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">
-          <div class="menu-card-header">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3535-3337-4933-a161-373366396537/IMG_4034.JPG" alt="Katsu Chicken" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">          <div class="menu-card-header">
             <span class="menu-card-name">Katsu Chicken</span>
             <span class="menu-card-dots"></span>
             <span class="menu-card-price">€16</span>
@@ -1076,144 +1062,126 @@ footer {
 
       <!-- SUSHI -->
       <div class="menu-panel" data-panel="sushi">
-        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild6661-3033-4163-a233-323837616134/IMG_4528_5.jpg" alt="Green Dragon Roll" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">
-          <div class="menu-card-header">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild6661-3033-4163-a233-323837616134/IMG_4528_5.jpg" alt="Green Dragon Roll" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">          <div class="menu-card-header">
             <span class="menu-card-name">Green Dragon Roll</span>
             <span class="menu-card-dots"></span>
             <span class="menu-card-price">€15</span>
           </div>
           <p class="menu-card-desc">Signature dragon roll with avocado</p>
         </div></div>
-        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild6534-3261-4530-b831-396438623436/IMG_4371_4.jpg" alt="White Dragon Roll" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">
-          <div class="menu-card-header">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild6534-3261-4530-b831-396438623436/IMG_4371_4.jpg" alt="White Dragon Roll" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">          <div class="menu-card-header">
             <span class="menu-card-name">White Dragon Roll</span>
             <span class="menu-card-dots"></span>
             <span class="menu-card-price">€15</span>
           </div>
           <p class="menu-card-desc">Premium dragon roll with cream cheese</p>
         </div></div>
-        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3131-6164-4636-a337-376338393731/kage_222222222.jpg" alt="Kage Roll" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">
-          <div class="menu-card-header">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3131-6164-4636-a337-376338393731/kage_222222222.jpg" alt="Kage Roll" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">          <div class="menu-card-header">
             <span class="menu-card-name">Kage Roll</span>
             <span class="menu-card-dots"></span>
             <span class="menu-card-price">€18</span>
           </div>
           <p class="menu-card-desc">Tempura shrimp, eel, unagi sauce</p>
         </div></div>
-        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3164-3137-4630-a664-613666613163/IMG_4405_4.jpg" alt="Samurai Roll" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">
-          <div class="menu-card-header">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3164-3137-4630-a664-613666613163/IMG_4405_4.jpg" alt="Samurai Roll" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">          <div class="menu-card-header">
             <span class="menu-card-name">Samurai Roll</span>
             <span class="menu-card-dots"></span>
             <span class="menu-card-price">€16</span>
           </div>
           <p class="menu-card-desc">Salmon, tempura shrimp, tobiko</p>
         </div></div>
-        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild6565-6636-4434-b961-616230336163/caliphorniiiii.jpg" alt="California Roll" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">
-          <div class="menu-card-header">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild6565-6636-4434-b961-616230336163/caliphorniiiii.jpg" alt="California Roll" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">          <div class="menu-card-header">
             <span class="menu-card-name">California Roll</span>
             <span class="menu-card-dots"></span>
             <span class="menu-card-price">€12</span>
           </div>
           <p class="menu-card-desc">Classic California with crab, avocado</p>
         </div></div>
-        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3137-6562-4063-a630-336336356337/IMG_4683_4.jpg" alt="Philadelphia Roll" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">
-          <div class="menu-card-header">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3137-6562-4063-a630-336336356337/IMG_4683_4.jpg" alt="Philadelphia Roll" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">          <div class="menu-card-header">
             <span class="menu-card-name">Philadelphia Roll</span>
             <span class="menu-card-dots"></span>
             <span class="menu-card-price">€13</span>
           </div>
           <p class="menu-card-desc">Salmon, cream cheese, cucumber</p>
         </div></div>
-        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild6333-6232-4361-a434-386164663039/IMG_4367_4.jpg" alt="Age Ebi Roll" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">
-          <div class="menu-card-header">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild6333-6232-4361-a434-386164663039/IMG_4367_4.jpg" alt="Age Ebi Roll" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">          <div class="menu-card-header">
             <span class="menu-card-name">Age Ebi Roll</span>
             <span class="menu-card-dots"></span>
             <span class="menu-card-price">€13</span>
           </div>
           <p class="menu-card-desc">Fried shrimp roll with special sauce</p>
         </div></div>
-        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3466-6537-4431-b331-373565623466/aaaaaaaaaa6.jpg" alt="Sake Roll" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">
-          <div class="menu-card-header">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3466-6537-4431-b331-373565623466/aaaaaaaaaa6.jpg" alt="Sake Roll" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">          <div class="menu-card-header">
             <span class="menu-card-name">Sake Roll</span>
             <span class="menu-card-dots"></span>
             <span class="menu-card-price">€14</span>
           </div>
           <p class="menu-card-desc">Fresh salmon roll, delicately seasoned</p>
         </div></div>
-        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3239-6435-4236-b532-663065343761/crispyyyyy.jpg" alt="Crispy Roll" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">
-          <div class="menu-card-header">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3239-6435-4236-b532-663065343761/crispyyyyy.jpg" alt="Crispy Roll" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">          <div class="menu-card-header">
             <span class="menu-card-name">Crispy Roll</span>
             <span class="menu-card-dots"></span>
             <span class="menu-card-price">€12</span>
           </div>
           <p class="menu-card-desc">Tempura-fried roll with crunchy texture</p>
         </div></div>
-        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3337-3465-4164-b262-383531376231/spicy_tunaqaaa.jpg" alt="Spicy Tuna Roll" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">
-          <div class="menu-card-header">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3337-3465-4164-b262-383531376231/spicy_tunaqaaa.jpg" alt="Spicy Tuna Roll" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">          <div class="menu-card-header">
             <span class="menu-card-name">Spicy Tuna Roll</span>
             <span class="menu-card-dots"></span>
             <span class="menu-card-price">€14</span>
           </div>
           <p class="menu-card-desc">Spicy tuna with sriracha mayo</p>
         </div></div>
-        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild6463-3365-4437-b562-653638353830/IMG_4675_5.jpg" alt="Tuna Avocado Roll" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">
-          <div class="menu-card-header">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild6463-3365-4437-b562-653638353830/IMG_4675_5.jpg" alt="Tuna Avocado Roll" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">          <div class="menu-card-header">
             <span class="menu-card-name">Tuna Avocado Roll</span>
             <span class="menu-card-dots"></span>
             <span class="menu-card-price">€14</span>
           </div>
           <p class="menu-card-desc">Fresh tuna paired with creamy avocado</p>
         </div></div>
-        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3038-6432-4734-b835-643961363762/IMG_4604_2.JPG" alt="Tekka Maki" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">
-          <div class="menu-card-header">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3038-6432-4734-b835-643961363762/IMG_4604_2.JPG" alt="Tekka Maki" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">          <div class="menu-card-header">
             <span class="menu-card-name">Tekka Maki</span>
             <span class="menu-card-dots"></span>
             <span class="menu-card-price">€7.50</span>
           </div>
           <p class="menu-card-desc">Classic tuna maki</p>
         </div></div>
-        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild6664-6261-4765-b039-326562336161/IMG_4598.JPG" alt="Sake Maki" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">
-          <div class="menu-card-header">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild6664-6261-4765-b039-326562336161/IMG_4598.JPG" alt="Sake Maki" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">          <div class="menu-card-header">
             <span class="menu-card-name">Sake Maki</span>
             <span class="menu-card-dots"></span>
             <span class="menu-card-price">€7.50</span>
           </div>
           <p class="menu-card-desc">Classic salmon maki</p>
         </div></div>
-        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3632-3463-4038-a466-373136346238/IMG_4804.JPG" alt="Kappa Maki" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">
-          <div class="menu-card-header">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3632-3463-4038-a466-373136346238/IMG_4804.JPG" alt="Kappa Maki" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">          <div class="menu-card-header">
             <span class="menu-card-name">Kappa Maki</span>
             <span class="menu-card-dots"></span>
             <span class="menu-card-price">€6.50</span>
           </div>
           <p class="menu-card-desc">Fresh cucumber maki</p>
         </div></div>
-        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3639-6230-4833-b331-653837336234/IMG_4805.JPG" alt="Avocado Maki" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">
-          <div class="menu-card-header">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3639-6230-4833-b331-653837336234/IMG_4805.JPG" alt="Avocado Maki" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">          <div class="menu-card-header">
             <span class="menu-card-name">Avocado Maki</span>
             <span class="menu-card-dots"></span>
             <span class="menu-card-price">€7</span>
           </div>
           <p class="menu-card-desc">Creamy avocado maki</p>
         </div></div>
-        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild6165-3432-4739-a133-663130363732/IMG_4800.JPG" alt="Spicy Tekka Maki" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">
-          <div class="menu-card-header">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild6165-3432-4739-a133-663130363732/IMG_4800.JPG" alt="Spicy Tekka Maki" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">          <div class="menu-card-header">
             <span class="menu-card-name">Spicy Tekka Maki</span>
             <span class="menu-card-dots"></span>
             <span class="menu-card-price">€7.50</span>
           </div>
           <p class="menu-card-desc">Spicy tuna maki with chili</p>
         </div></div>
-        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3030-6230-4561-a230-336164383330/IMG_3985_3.JPG" alt="Nigiri Salmon" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">
-          <div class="menu-card-header">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3030-6230-4561-a230-336164383330/IMG_3985_3.JPG" alt="Nigiri Salmon" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">          <div class="menu-card-header">
             <span class="menu-card-name">Nigiri Salmon</span>
             <span class="menu-card-dots"></span>
             <span class="menu-card-price">€3</span>
           </div>
           <p class="menu-card-desc">Hand-pressed salmon nigiri</p>
         </div></div>
-        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild6431-6363-4464-a438-633561336632/IMG_3971_3.JPG" alt="Nigiri Tuna" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">
-          <div class="menu-card-header">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild6431-6363-4464-a438-633561336632/IMG_3971_3.JPG" alt="Nigiri Tuna" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">          <div class="menu-card-header">
             <span class="menu-card-name">Nigiri Tuna</span>
             <span class="menu-card-dots"></span>
             <span class="menu-card-price">€3</span>
@@ -1224,32 +1192,28 @@ footer {
 
       <!-- NOODLES -->
       <div class="menu-panel" data-panel="noodles">
-        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild6339-6339-4262-b966-323662623566/IMG_20251129_153355.jpg" alt="Beef Teriyaki" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">
-          <div class="menu-card-header">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild6339-6339-4262-b966-323662623566/IMG_20251129_153355.jpg" alt="Beef Teriyaki" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">          <div class="menu-card-header">
             <span class="menu-card-name">Beef Teriyaki</span>
             <span class="menu-card-dots"></span>
             <span class="menu-card-price">€15</span>
           </div>
           <p class="menu-card-desc">Stir-fried beef with udon noodles</p>
         </div></div>
-        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3035-3434-4639-b632-626131616165/1000000627.jpg" alt="Yakisoba Shrimps" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">
-          <div class="menu-card-header">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3035-3434-4639-b632-626131616165/1000000627.jpg" alt="Yakisoba Shrimps" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">          <div class="menu-card-header">
             <span class="menu-card-name">Yakisoba Shrimps</span>
             <span class="menu-card-dots"></span>
             <span class="menu-card-price">€14</span>
           </div>
           <p class="menu-card-desc">Soba with tiger shrimps, vegetables</p>
         </div></div>
-        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild6463-3437-4331-b632-316438616630/IMG_20251129_152836.jpg" alt="Funchoza Chicken" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">
-          <div class="menu-card-header">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild6463-3437-4331-b632-316438616630/IMG_20251129_152836.jpg" alt="Funchoza Chicken" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">          <div class="menu-card-header">
             <span class="menu-card-name">Funchoza Chicken</span>
             <span class="menu-card-dots"></span>
             <span class="menu-card-price">€12</span>
           </div>
           <p class="menu-card-desc">Glass noodles Asian style</p>
         </div></div>
-        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild6634-3237-4665-b938-376463366238/1000000635.jpg" alt="Funchoza Vegetables" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">
-          <div class="menu-card-header">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild6634-3237-4665-b938-376463366238/1000000635.jpg" alt="Funchoza Vegetables" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">          <div class="menu-card-header">
             <span class="menu-card-name">Funchoza Vegetables</span>
             <span class="menu-card-dots"></span>
             <span class="menu-card-price">€10</span>
@@ -1260,24 +1224,21 @@ footer {
 
       <!-- SALADS & POKE -->
       <div class="menu-panel" data-panel="salads">
-        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3036-3765-4864-b036-646533356261/IMG_5004.jpg" alt="Avocado Salad" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">
-          <div class="menu-card-header">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3036-3765-4864-b036-646533356261/IMG_5004.jpg" alt="Avocado Salad" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">          <div class="menu-card-header">
             <span class="menu-card-name">Avocado Salad</span>
             <span class="menu-card-dots"></span>
             <span class="menu-card-price">€10.50</span>
           </div>
           <p class="menu-card-desc">Avocado, asparagus, honey-citrus dressing</p>
         </div></div>
-        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild6565-6266-4466-a462-326236326530/IMG_4060.JPG" alt="Poke Tuna" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">
-          <div class="menu-card-header">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild6565-6266-4466-a462-326236326530/IMG_4060.JPG" alt="Poke Tuna" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">          <div class="menu-card-header">
             <span class="menu-card-name">Poke Tuna</span>
             <span class="menu-card-dots"></span>
             <span class="menu-card-price">€13</span>
           </div>
           <p class="menu-card-desc">Tuna sashimi, rice, avocado, edamame</p>
         </div></div>
-        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3836-6332-4130-b630-336561643834/IMG_4037_2.JPG" alt="Poke Salmon" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">
-          <div class="menu-card-header">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3836-6332-4130-b630-336561643834/IMG_4037_2.JPG" alt="Poke Salmon" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">          <div class="menu-card-header">
             <span class="menu-card-name">Poke Salmon</span>
             <span class="menu-card-dots"></span>
             <span class="menu-card-price">€14</span>
@@ -1288,64 +1249,56 @@ footer {
 
       <!-- BREAKFAST -->
       <div class="menu-panel" data-panel="breakfast">
-        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3736-3730-4530-a438-326462616662/IMG_4952.jpg" alt="Poached Eggs" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">
-          <div class="menu-card-header">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3736-3730-4530-a438-326462616662/IMG_4952.jpg" alt="Poached Eggs" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">          <div class="menu-card-header">
             <span class="menu-card-name">Poached Eggs</span>
             <span class="menu-card-dots"></span>
             <span class="menu-card-price">€7.50</span>
           </div>
           <p class="menu-card-desc">Perfectly poached, served on artisan toast</p>
         </div></div>
-        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3363-3636-4634-b738-653638653238/IMG_4936.JPG" alt="Tortilla with Omelette" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">
-          <div class="menu-card-header">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3363-3636-4634-b738-653638653238/IMG_4936.JPG" alt="Tortilla with Omelette" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">          <div class="menu-card-header">
             <span class="menu-card-name">Tortilla with Omelette</span>
             <span class="menu-card-dots"></span>
             <span class="menu-card-price">€7.50</span>
           </div>
           <p class="menu-card-desc">Warm tortilla wrap with fluffy omelette</p>
         </div></div>
-        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3562-6439-4932-b566-613035656235/1000000631.jpg" alt="Montenegrin Traditional Breakfast" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">
-          <div class="menu-card-header">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3562-6439-4932-b566-613035656235/1000000631.jpg" alt="Montenegrin Traditional Breakfast" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">          <div class="menu-card-header">
             <span class="menu-card-name">Montenegrin Traditional Breakfast</span>
             <span class="menu-card-dots"></span>
             <span class="menu-card-price">€8</span>
           </div>
           <p class="menu-card-desc">A taste of local morning tradition</p>
         </div></div>
-        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild6661-6336-4137-a236-616535653366/IMG_3910.jpg" alt="Shakshuka" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">
-          <div class="menu-card-header">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild6661-6336-4137-a236-616535653366/IMG_3910.jpg" alt="Shakshuka" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">          <div class="menu-card-header">
             <span class="menu-card-name">Shakshuka</span>
             <span class="menu-card-dots"></span>
             <span class="menu-card-price">€8</span>
           </div>
           <p class="menu-card-desc">Eggs poached in spiced tomato sauce</p>
         </div></div>
-        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3035-6466-4366-b735-326262383336/1000000644.jpg" alt="Oatmeal with Fruits" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">
-          <div class="menu-card-header">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3035-6466-4366-b735-326262383336/1000000644.jpg" alt="Oatmeal with Fruits" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">          <div class="menu-card-header">
             <span class="menu-card-name">Oatmeal with Fruits</span>
             <span class="menu-card-dots"></span>
             <span class="menu-card-price">€5</span>
           </div>
           <p class="menu-card-desc">Creamy oats topped with seasonal fruits</p>
         </div></div>
-        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3862-3363-4039-b964-313561666562/IMG_4908_2.jpg" alt="Croissant Sweet" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">
-          <div class="menu-card-header">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3862-3363-4039-b964-313561666562/IMG_4908_2.jpg" alt="Croissant Sweet" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">          <div class="menu-card-header">
             <span class="menu-card-name">Croissant Sweet</span>
             <span class="menu-card-dots"></span>
             <span class="menu-card-price">€3.50</span>
           </div>
           <p class="menu-card-desc">Freshly baked, golden and buttery</p>
         </div></div>
-        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3639-6363-4331-b134-613133333738/IMG_4899.JPG" alt="Croissant Fortuna" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">
-          <div class="menu-card-header">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3639-6363-4331-b134-613133333738/IMG_4899.JPG" alt="Croissant Fortuna" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">          <div class="menu-card-header">
             <span class="menu-card-name">Croissant Fortuna</span>
             <span class="menu-card-dots"></span>
             <span class="menu-card-price">€6</span>
           </div>
           <p class="menu-card-desc">Signature filled croissant</p>
         </div></div>
-        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3636-3333-4736-a634-373431353734/IMG_4883.JPG" alt="Croissant Fides" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">
-          <div class="menu-card-header">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild3636-3333-4736-a634-373431353734/IMG_4883.JPG" alt="Croissant Fides" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">          <div class="menu-card-header">
             <span class="menu-card-name">Croissant Fides</span>
             <span class="menu-card-dots"></span>
             <span class="menu-card-price">€6.50</span>
@@ -1356,24 +1309,21 @@ footer {
 
       <!-- DESSERTS -->
       <div class="menu-panel" data-panel="desserts">
-        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild6636-6663-4132-b062-323839643164/IMG_4910.JPG" alt="Chocolate Pancakes with Nutella" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">
-          <div class="menu-card-header">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild6636-6663-4132-b062-323839643164/IMG_4910.JPG" alt="Chocolate Pancakes with Nutella" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">          <div class="menu-card-header">
             <span class="menu-card-name">Chocolate Pancakes with Nutella</span>
             <span class="menu-card-dots"></span>
             <span class="menu-card-price">€5</span>
           </div>
           <p class="menu-card-desc">Fluffy pancakes drizzled with warm Nutella</p>
         </div></div>
-        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild6530-6533-4238-b462-336639363039/1000000650.jpg" alt="Choco Brownie" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">
-          <div class="menu-card-header">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild6530-6533-4238-b462-336639363039/1000000650.jpg" alt="Choco Brownie" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">          <div class="menu-card-header">
             <span class="menu-card-name">Choco Brownie</span>
             <span class="menu-card-dots"></span>
             <span class="menu-card-price">€5.50</span>
           </div>
           <p class="menu-card-desc">Rich, dense chocolate brownie</p>
         </div></div>
-        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild6637-6461-4730-b265-643661363639/1000000647.jpg" alt="Gyoza Apple" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">
-          <div class="menu-card-header">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img class="menu-card-img" src="https://static.tildacdn.ink/tild6637-6461-4730-b265-643661363639/1000000647.jpg" alt="Gyoza Apple" loading="lazy" onload="this.classList.add('loaded')"></div><div class="menu-card-body">          <div class="menu-card-header">
             <span class="menu-card-name">Gyoza Apple</span>
             <span class="menu-card-dots"></span>
             <span class="menu-card-price">€8.50</span>
